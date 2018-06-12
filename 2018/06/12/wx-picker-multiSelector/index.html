@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="picker multiSelector," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="小程序中的【picker】（底部弹起的滚动选择器）提供了五种选择器，通过mode来区分：普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。在做项目时遇到日期和时间选择器合成一种的滚动选择器，因此采用多列选择器。  wxml页面：  123456&amp;lt;picker mode=&quot;multiSelector&quot; value=&quot;&amp;#123;&amp;#123;dateTime1&amp;#1">
+<meta name="keywords" content="picker multiSelector">
+<meta property="og:type" content="article">
+<meta property="og:title" content="时间+日期选择器">
+<meta property="og:url" content="http://yoursite.com/2018/06/12/wx-picker-multiSelector/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="小程序中的【picker】（底部弹起的滚动选择器）提供了五种选择器，通过mode来区分：普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。在做项目时遇到日期和时间选择器合成一种的滚动选择器，因此采用多列选择器。  wxml页面：  123456&amp;lt;picker mode=&quot;multiSelector&quot; value=&quot;&amp;#123;&amp;#123;dateTime1&amp;#1">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-12T02:33:21.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="时间+日期选择器">
+<meta name="twitter:description" content="小程序中的【picker】（底部弹起的滚动选择器）提供了五种选择器，通过mode来区分：普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。在做项目时遇到日期和时间选择器合成一种的滚动选择器，因此采用多列选择器。  wxml页面：  123456&amp;lt;picker mode=&quot;multiSelector&quot; value=&quot;&amp;#123;&amp;#123;dateTime1&amp;#1">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/12/wx-picker-multiSelector/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>时间+日期选择器 | Hexo</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/wx-picker-multiSelector/" itemprop="url">时间+日期选择器</a></h1>
+          <h1 class="post-title" itemprop="name headline">时间+日期选择器</h1>
         
 
         <div class="post-meta">
@@ -298,9 +300,7 @@
       
 
       
-        
-          
-            <p>小程序中的<a href="https://developers.weixin.qq.com/miniprogram/dev/component/picker.html" target="_blank" rel="noopener">【picker】</a>（底部弹起的滚动选择器）提供了五种选择器，通过mode来区分：普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。<br>在做项目时遇到日期和时间选择器合成一种的滚动选择器，因此采用多列选择器。</p>
+        <p>小程序中的<a href="https://developers.weixin.qq.com/miniprogram/dev/component/picker.html" target="_blank" rel="noopener">【picker】</a>（底部弹起的滚动选择器）提供了五种选择器，通过mode来区分：普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。<br>在做项目时遇到日期和时间选择器合成一种的滚动选择器，因此采用多列选择器。</p>
 <blockquote>
 <p>wxml页面：</p>
 </blockquote>
@@ -314,8 +314,6 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withData</span>(<span class="params">param</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> param &lt; <span class="number">10</span> ? <span class="string">'0'</span> + param : <span class="string">''</span> + param;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLoopArray</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> start = start || <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> end = end || <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> array = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = start; i &lt;= end; i++) &#123;</span><br><span class="line">    array.push(withData(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMonthDay</span>(<span class="params">year, month</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> flag = year % <span class="number">400</span> == <span class="number">0</span> || (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>), array = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (month) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'01'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'03'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'05'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'07'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'08'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'10'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'12'</span>:</span><br><span class="line">      array = getLoopArray(<span class="number">1</span>, <span class="number">31</span>)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'04'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'06'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'09'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'11'</span>:</span><br><span class="line">      array = getLoopArray(<span class="number">1</span>, <span class="number">30</span>)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'02'</span>:</span><br><span class="line">      array = flag ? getLoopArray(<span class="number">1</span>, <span class="number">29</span>) : getLoopArray(<span class="number">1</span>, <span class="number">28</span>)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      array = <span class="string">'月份格式不正确，请重新输入！'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewDateArry</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当前时间的处理</span></span><br><span class="line">  <span class="keyword">var</span> newDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">var</span> year = withData(newDate.getFullYear()),</span><br><span class="line">    mont = withData(newDate.getMonth() + <span class="number">1</span>),</span><br><span class="line">    date = withData(newDate.getDate()),</span><br><span class="line">    hour = withData(newDate.getHours()),</span><br><span class="line">    minu = withData(newDate.getMinutes()),</span><br><span class="line">    seco = withData(newDate.getSeconds());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [year, mont, date, hour, minu, seco];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dateTimePicker</span>(<span class="params">startYear, endYear, date</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 返回默认显示的数组和联动数组的声明</span></span><br><span class="line">  <span class="keyword">var</span> dateTime = [], dateTimeArray = [[], [], [], [], [], []];</span><br><span class="line">  <span class="keyword">var</span> start = startYear || <span class="number">1978</span>;</span><br><span class="line">  <span class="keyword">var</span> end = endYear || <span class="number">2100</span>;</span><br><span class="line">  <span class="comment">// 默认开始显示数据</span></span><br><span class="line">  <span class="keyword">var</span> defaultDate = date ? [...date.split(<span class="string">' '</span>)[<span class="number">0</span>].split(<span class="string">'-'</span>), ...date.split(<span class="string">' '</span>)[<span class="number">1</span>].split(<span class="string">':'</span>)] : getNewDateArry();</span><br><span class="line">  <span class="comment">// 处理联动列表数据</span></span><br><span class="line">  <span class="comment">/*年月日 时分秒*/</span></span><br><span class="line">  dateTimeArray[<span class="number">0</span>] = getLoopArray(start, end);</span><br><span class="line">  dateTimeArray[<span class="number">1</span>] = getLoopArray(<span class="number">1</span>, <span class="number">12</span>);</span><br><span class="line">  dateTimeArray[<span class="number">2</span>] = getMonthDay(defaultDate[<span class="number">0</span>], defaultDate[<span class="number">1</span>]);</span><br><span class="line">  dateTimeArray[<span class="number">3</span>] = getLoopArray(<span class="number">0</span>, <span class="number">23</span>);</span><br><span class="line">  dateTimeArray[<span class="number">4</span>] = getLoopArray(<span class="number">0</span>, <span class="number">59</span>);</span><br><span class="line">  dateTimeArray[<span class="number">5</span>] = getLoopArray(<span class="number">0</span>, <span class="number">59</span>);</span><br><span class="line"></span><br><span class="line">  dateTimeArray.forEach(<span class="function">(<span class="params">current, index</span>) =&gt;</span> &#123;</span><br><span class="line">    dateTime.push(current.indexOf(defaultDate[index]));</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    dateTimeArray: dateTimeArray,</span><br><span class="line">    dateTime: dateTime</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  dateTimePicker: dateTimePicker,</span><br><span class="line">  getMonthDay: getMonthDay</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -330,274 +328,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/wx-lazyload/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/wx-lazyload/" itemprop="url">小程序--图片懒加载</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-12T09:36:31+08:00">
-                2018-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/picker-multiSelector/" rel="tag"># picker multiSelector</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>图片懒加载 </p>
-</blockquote>
-<ul>
-<li>需要知道wxml的节点信息（【<a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html" target="_blank" rel="noopener">wxml节点信息以及节点布局相交状态</a>】）</li>
-<li>利用三元表达式改变图片图路径</li>
-<li>当滚动到当前位置图片进行加载（判断当前图片到达的高度）</li>
-</ul>
-<blockquote>
-<p>wxml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;photolist&quot;&gt;</span><br><span class="line">  &lt;view class=&apos;list&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;item item-&#123;&#123;index&#125;&#125;&apos; wx:for=&quot;&#123;&#123;group&#125;&#125;&quot; wx:for-item=&quot;item&quot; wx:key=&quot;index&quot; data-key=&apos;&#123;&#123;index&#125;&#125;&apos; bindtap=&apos;showicon&apos; data-photo=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;</span><br><span class="line">    //三元表达式</span><br><span class="line">      &lt;image src=&apos;&#123;&#123;item.show? item.src : item.def&#125;&#125;&apos; class=&apos;&#123;&#123;item.show? &quot;active&quot; : &quot;&quot;&#125;&#125;&apos; data-index=&apos;&#123;&#123;index&#125;&#125;&apos; mode=&quot;widthFix&quot; bindtap=&apos;previewImage&apos;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>js</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    height: &apos;&apos;, // 获取当前页面的可视高度</span><br><span class="line">    group:</span><br><span class="line">    [</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">    ],</span><br><span class="line">    imgs: [],</span><br><span class="line">  &#125;,</span><br><span class="line">   onLoad: function () &#123;</span><br><span class="line">    let group = this.data.group  // 获取原数据</span><br><span class="line">    for (let i in this.data.group) &#123; </span><br><span class="line">    //循环 每张图片进入可视区域时 show的false状态改为true 渲染真正的图片地址</span><br><span class="line">    //wx.createIntersectionObserver()创建并返回一个 IntersectionObserver 对象实例 </span><br><span class="line">      wx.createIntersectionObserver().relativeToViewport(&#123; bottom: 20 &#125;).observe(&apos;.item-&apos; + i, (ret) =&gt; &#123; //目标节点进入显示区域以下20px 时</span><br><span class="line">        if (ret.intersectionRatio &gt; 0) &#123;</span><br><span class="line">          group[i].show = true</span><br><span class="line">        &#125;</span><br><span class="line">        this.setData(&#123; // 更新数据</span><br><span class="line">          group</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">   onPageScroll() &#123;  </span><br><span class="line">    this.showImg()// 调用showImg函数</span><br><span class="line">  &#125;,</span><br><span class="line">  showImg() &#123;  // 判断高度是否需要加载</span><br><span class="line">  //返回一个SelectorQuery对象实例。可以在这个实例上使用select等方法选择节点，并使用boundingClientRect等方法选择需要查询的信息。</span><br><span class="line">    wx.createSelectorQuery().selectAll(&apos;.item&apos;).boundingClientRect((ret) =&gt; &#123;</span><br><span class="line">      const group = this.data.group</span><br><span class="line">      const height = this.data.height</span><br><span class="line">     </span><br><span class="line">      ret.forEach((item, index) =&gt; &#123;</span><br><span class="line">        console.log(group[index])</span><br><span class="line">        if (item.top &lt; height) &#123;</span><br><span class="line">          group[index].show = true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        group</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;).exec()</span><br><span class="line">  &#125;,</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/wx-pluggable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/24/wx-pluggable/" itemprop="url">小程序-插件化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T18:31:45+08:00">
-                2018-05-24
-              </time>
+              <a href="/2018/06/12/wx-lazyload/" rel="next" title="小程序--图片懒加载">
+                <i class="fa fa-chevron-left"></i> 小程序--图片懒加载
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h5 id="插件目录结构"><a href="#插件目录结构" class="headerlink" title="插件目录结构"></a>插件目录结构</h5><p>​    结构主要分为两大块，分别为plugin、miniprogram。plugin分为api和components两部分，用来放插件的逻辑代码。miniprogram中是插件的使用或测试的实例。</p>
-<p><img src="E:\Hexo\public\images\catalog.png" alt=""></p>
-<p><img src="C:\Users\ADMINI~1\AppData\Local\Temp\1527493917106.png" alt="1527493917106"></p>
-<h5 id="插件API接口开发"><a href="#插件API接口开发" class="headerlink" title="插件API接口开发"></a>插件API接口开发</h5><p>例如：写一个返回 ‘’Learn the WeChat subroutine ‘’接口</p>
-<p>1.在plugin/api/data.js写下我们的方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayStudy</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Learn the WeChat subroutine'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    sayStudy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.在plugin/index.js中暴露出使用插件所需要的接口。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -607,258 +367,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/Coffee/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/Coffee/" itemprop="url">Coffee</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T14:56:02+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>第一次搭建博客</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T09:03:00+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -866,6 +379,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1071,6 +588,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
