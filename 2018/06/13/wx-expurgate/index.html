@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T02:41:38.816Z">
+<meta property="og:updated_time" content="2018-06-13T02:53:52.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="点击选中对应的单选框，一键删除选中的单选框。">
 <meta name="twitter:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
@@ -191,16 +191,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -292,6 +282,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
