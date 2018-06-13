@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="小程序,js," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/chooseImage、上传图片/index.html">
+<meta name="description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
+<meta name="keywords" content="小程序,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点击选中对应的单选框，一键删除选中的单选框。">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/wx-expurgate/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-13T01:26:59.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="点击选中对应的单选框，一键删除选中的单选框。">
+<meta name="twitter:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/chooseImage、上传图片/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/13/wx-expurgate/"/>
 
 
 
 
 
-  <title>Tag: chooseImage、上传图片 | Hexo</title>
+  <title>点击选中对应的单选框，一键删除选中的单选框。 | Hexo</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,54 +219,152 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>chooseImage、上传图片<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/wx-expurgate/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Coffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/12/wx-uploadpictures/" itemprop="url">
-              
-                <span itemprop="name">小程序——上传多张图片</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">点击选中对应的单选框，一键删除选中的单选框。</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T11:30:01+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-13T09:18:27+08:00">
+                2018-06-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>思路：</p>
+<p>一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。</p>
+<p>for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为<strong>arr</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">detele: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = []</span><br><span class="line">    <span class="keyword">var</span> album = <span class="keyword">this</span>.data.album</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; album.length;i++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (album[i].selected == <span class="literal">false</span>)&#123;</span><br><span class="line">        arr.push(album[i])</span><br><span class="line">      &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">     album: arr,</span><br><span class="line">     edit: <span class="literal">false</span></span><br><span class="line">   &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/12/wx-uploadpictures/" rel="next" title="小程序——上传多张图片">
+                <i class="fa fa-chevron-left"></i> 小程序——上传多张图片
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -269,6 +372,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -305,7 +412,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -318,7 +425,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -474,6 +581,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
