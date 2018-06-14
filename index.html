@@ -239,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/wx-uncheckedstate-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/wx-scroll-view/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Coffee">
@@ -258,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/13/wx-uncheckedstate-1/" itemprop="url">wx-uncheckedstate</a></h1>
+                <a class="post-title-link" href="/2018/06/13/wx-scroll-view/" itemprop="url">wx-uncheckedstate</a></h1>
         
 
         <div class="post-meta">
@@ -280,6 +280,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/scroll-view/" itemprop="url" rel="index">
+                    <span itemprop="name">scroll-view</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -310,7 +343,43 @@
       
         
           
-            
+            <p>​    小程序组件中的视图容器：scroll-view（滚动视图容器）</p>
+<p>​<br>​    </p>
+<blockquote>
+<p>常用的属性（<a href="https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html" target="_blank" rel="noopener">开发者文档</a>）</p>
+</blockquote>
+<pre><code>scroll-x ：(Boolean) 允许横向滚动
+scroll-y ：(Boolean) 允许纵向滚动
+scroll-with-animation ：(Boolean) 在设置滚动条位置时使用动画过渡
+scroll-top  ：(Number) 设置竖向滚动条位置
+scroll-left ：(Number) 设置横向滚动条位置
+</code></pre><blockquote>
+<p>提示</p>
+</blockquote>
+<pre><code>tip: 请勿在 scroll-view 中使用 textarea、map、canvas、video 组件
+tip: scroll-into-view 的优先级高于 scroll-top
+tip: 在滚动 scroll-view 时会阻止页面回弹，所以在 scroll-view 中滚动，是无法触发 onPullDownRefresh
+tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view ，这样也能通过点击顶部状态栏回到页面顶部
+</code></pre><blockquote>
+<p>隐藏滚动条</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">color</span>: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<blockquote>
+<p>wxml</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"grade"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">class</span>=<span class="string">"grade-scroll"</span> <span class="attr">scroll-x</span>=<span class="string">"true"</span> <span class="attr">style</span>=<span class="string">"width: 100%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"&#123;&#123;gradeactive==gradeitem.id ? 'grade-one':'grade-default'&#125;&#125;"</span> <span class="attr">wx:for</span>=<span class="string">'&#123;&#123;gradelist&#125;&#125;'</span> <span class="attr">wx:for-item</span>=<span class="string">'gradeitem'</span> <span class="attr">wx:key</span>=<span class="string">'index'</span> <span class="attr">data-id</span>=<span class="string">"&#123;&#123;gradeitem.id&#125;&#125;"</span> <span class="attr">bindtap</span>=<span class="string">'showgrade'</span>&gt;</span></span><br><span class="line">      &#123;&#123;gradeitem.name&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 页面的初始数据</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> data: &#123;</span><br><span class="line">   gradelist: [&#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">6</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">7</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">8</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">9</span>, <span class="attr">name</span>: <span class="string">'小二班'</span> &#125;],</span><br><span class="line">   gradeactive: <span class="number">1</span>, <span class="comment">// 班级切换</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="comment">// 班级切换</span></span><br><span class="line"> showgrade: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(e.currentTarget.dataset.id)</span><br><span class="line">   <span class="keyword">if</span> (e.currentTarget.dataset.id != <span class="keyword">this</span>.data.gradeactive) &#123;</span><br><span class="line">     <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">       gradeactive: e.currentTarget.dataset.id</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>wxss</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.grade</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">15</span>rpx <span class="number">30</span>rpx;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#188be4</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.grade-scroll</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">125</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">125</span>rpx;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: scroll;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.grade-scroll</span> <span class="selector-class">.grade-one</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">120</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50</span>rpx;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">30</span>rpx;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#188be4</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">24</span>rpx;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">50</span>rpx;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">20</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.grade-scroll</span> <span class="selector-class">.grade-default</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">120</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50</span>rpx;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">30</span>rpx;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">24</span>rpx;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">50</span>rpx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1617,7 +1686,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1628,7 +1697,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
