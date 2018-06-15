@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序,rich-text," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="富文本解析 12345678910111213141516171819202122可以使用wxParse这个插件:1. 首先先下载wxParse这个插件到微信小程序对应的文件夹中。2. 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)3. 在.wxss文件中引入：@import &quot;/wxParse/wxParse.wxss&quot;4">
+<meta name="keywords" content="小程序,rich-text">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wx-richText">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/wx-richText/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="富文本解析 12345678910111213141516171819202122可以使用wxParse这个插件:1. 首先先下载wxParse这个插件到微信小程序对应的文件夹中。2. 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)3. 在.wxss文件中引入：@import &quot;/wxParse/wxParse.wxss&quot;4">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-15T03:04:52.277Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wx-richText">
+<meta name="twitter:description" content="富文本解析 12345678910111213141516171819202122可以使用wxParse这个插件:1. 首先先下载wxParse这个插件到微信小程序对应的文件夹中。2. 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)3. 在.wxss文件中引入：@import &quot;/wxParse/wxParse.wxss&quot;4">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/wx-richText/"/>
+
+
+
+
+
+  <title>wx-richText | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/wx-richText/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Coffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">wx-richText</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T10:52:53+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/rich-text/" itemprop="url" rel="index">
+                    <span itemprop="name">rich-text</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<h4 id="富文本解析"><a href="#富文本解析" class="headerlink" title="富文本解析"></a>富文本解析</h4></blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">可以使用wxParse这个插件:</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 首先先下载wxParse这个插件到微信小程序对应的文件夹中。</span><br><span class="line"><span class="number">2.</span> 在.js文件中引入：<span class="keyword">var</span> WxParse = <span class="built_in">require</span>(‘../../wxParse/wxParse.js’)</span><br><span class="line"><span class="number">3.</span> 在.wxss文件中引入：@<span class="keyword">import</span> <span class="string">"/wxParse/wxParse.wxss"</span></span><br><span class="line"><span class="number">4.</span> 数据绑定：WxParse.wxParse(<span class="string">'content'</span>, <span class="string">'html'</span>, content, that)</span><br><span class="line">这其中的“content”是后台传来的数据内容，具体情况具体对待。</span><br><span class="line"><span class="keyword">var</span> article = <span class="string">"&lt;div&gt;我是HTML代码&lt;/div&gt;"</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// WxParse.wxParse(bindName,type,data,target,imagePadding)</span></span><br><span class="line"><span class="comment">// 1. bindName绑定的数据名（必填）</span></span><br><span class="line"><span class="comment">// 2. type可以为html或者md（必填）</span></span><br><span class="line"><span class="comment">// 3. data为传入的具体数据（必填）</span></span><br><span class="line"><span class="comment">// 4. target为Page对象，一般为this（必填）</span></span><br><span class="line"><span class="comment">// 5. imagePadding为当图片自适应是左右的单一padding（默认为0，可选）</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">WxParse.wxParse(<span class="string">"article"</span>,<span class="string">"html"</span>,article,that,<span class="number">5</span>);</span><br><span class="line"><span class="number">5.</span> 在.wxml文件中引入： </span><br><span class="line">&lt;<span class="keyword">import</span>  src=<span class="string">"../../component/wxParse/ .wxml"</span>/&gt;</span><br><span class="line">&lt;template  is=<span class="string">"wxParse"</span> data=<span class="string">"&#123;&#123;wxParseData:content.nodes&#125;&#125;"</span>/&gt; </span><br><span class="line">这其中的<span class="keyword">import</span>表示引入文件，template表示导入模版。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例子：</p>
+</blockquote>
+<blockquote>
+<p>wxml</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">import</span> <span class="attr">src</span>=<span class="string">"../../component/wxParse/ .wxml"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--imgdetail是我后台获取的数据detail.content，在js中有赋值--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"wxParse"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;wxParseData:imgdetail.nodes&#125;&#125;"</span>/&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"img-content"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--detail是我后台获取的数据，content是里面的一项--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">nodes</span>=<span class="string">"&#123;&#123;detail.content&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> WxParse = <span class="built_in">require</span>(<span class="string">'../../component/wxParse/wxParse.js'</span>);</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    detail: [], <span class="comment">// 列表</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onload:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     </span><br><span class="line">  &#125;,</span><br><span class="line">  getDetail: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">'地址'</span>,</span><br><span class="line">      data: &#123;</span><br><span class="line">        data1：传送的数据<span class="number">1</span>,</span><br><span class="line">        data2：传送的数据<span class="number">2</span></span><br><span class="line">      &#125;,</span><br><span class="line">      method: <span class="string">'GET'</span>, <span class="comment">// OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT</span></span><br><span class="line">        <span class="comment">// header: &#123;&#125;, // 设置请求的 header</span></span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// success</span></span><br><span class="line">        <span class="keyword">if</span> (res.statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (res.data.meta.code == <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="comment">// 得到detail</span></span><br><span class="line">            that.setData(&#123;</span><br><span class="line">              detail: res.data.data</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="comment">// console.log(res.data.data)</span></span><br><span class="line">            <span class="comment">// console.log(that.data.detail.content)</span></span><br><span class="line">            <span class="comment">// 对得到的文本进行设置</span></span><br><span class="line">            that.changeContent()</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res.data.meta.code == <span class="number">400</span>) &#123;</span><br><span class="line">           </span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  changeContent () &#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">    <span class="comment">// 赋值content</span></span><br><span class="line">    <span class="keyword">var</span> content = that.data.detail.content.replace(<span class="regexp">/\&lt;[\/]?(section)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">m, m1</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> m.replace(<span class="string">'section'</span>, <span class="string">'div'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    content = content.replace(<span class="regexp">/(\&lt;div)/g</span>, <span class="string">'$1 class="hellorich"'</span>)</span><br><span class="line">    content = content.replace(<span class="regexp">/\&lt;[\/]?(ruby)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">m, m1</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> m.replace(<span class="string">'ruby'</span>, <span class="string">'span'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    content = content.replace(<span class="regexp">/\&lt;[\/]?(rt)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">m, m1</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> m.replace(<span class="string">'rt'</span>, <span class="string">'span'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    content = content.replace(<span class="regexp">/\&lt;[\/]?(rp)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">m, m1</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> m.replace(<span class="string">'rp'</span>, <span class="string">'span'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    that.data.detail.content = content.replace(<span class="regexp">/(\&lt;img)/gi</span>, <span class="string">'$1 style="max-width: 100% !important;"'</span>)</span><br><span class="line">    that.setData(&#123;</span><br><span class="line">      detail: that.data.detail</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">if</span> (wx.canIUse !== <span class="literal">undefined</span> &amp;&amp; wx.canIUse(<span class="string">'rich-text'</span>)) &#123;</span><br><span class="line">      that.setData(&#123;</span><br><span class="line">        die: <span class="literal">false</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// imgdetail</span></span><br><span class="line">      <span class="keyword">var</span> imgdetail = that.data.detail.content</span><br><span class="line">      WxParse.wxParse(<span class="string">'imgdetail'</span>, <span class="string">'html'</span>, imgdetail, that, <span class="number">5</span>);</span><br><span class="line">      that.setData(&#123;</span><br><span class="line">        die: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<pre><code>/i (忽略大小写)
+/g (全文查找出现的所有匹配字符)
+/m (多行查找)
+/gi(全文查找、忽略大小写)
+/ig(全文查找、忽略大小写)
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+            <a href="/tags/rich-text/" rel="tag"># rich-text</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/13/wx-scroll-view/" rel="next" title="小程序--滚动视图">
+                <i class="fa fa-chevron-left"></i> 小程序--滚动视图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Coffee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#富文本解析"><span class="nav-number">1.</span> <span class="nav-text">富文本解析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Coffee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
