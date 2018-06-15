@@ -239,6 +239,235 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/scroll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Coffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/15/scroll/" itemprop="url">滚动条</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T14:08:19+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/滚动条/" itemprop="url" rel="index">
+                    <span itemprop="name">滚动条</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<h5 id="overflow属性-（一共有5个）"><a href="#overflow属性-（一共有5个）" class="headerlink" title="overflow属性 （一共有5个）:"></a>overflow属性 （一共有5个）:</h5></blockquote>
+<blockquote>
+<p> 1、overflow:auto; 内容会被修剪，超出设置的宽高后会出现滚动条。</p>
+</blockquote>
+<blockquote>
+<p> 2、overflow:scroll; 内容会被修剪，不管内容是否超出，都会出现滚动条的位置。</p>
+</blockquote>
+<blockquote>
+<p> 3、overflow:visible; 这个是默认值，内容不会被修剪，会出现在元素框外面。</p>
+</blockquote>
+<blockquote>
+<p> 4、overflow:hidden; 内容被修剪，多余的内容被隐藏。</p>
+</blockquote>
+<blockquote>
+<p> 5、overflow:inherit; 从父元素那里继承overflow的值。</p>
+</blockquote>
+<blockquote>
+<h5 id="1-怎么只显示横向的滚动条？"><a href="#1-怎么只显示横向的滚动条？" class="headerlink" title="1.  怎么只显示横向的滚动条？"></a>1.  怎么只显示横向的滚动条？</h5></blockquote>
+<blockquote>
+<p>可以设置overflow-x:scroll,或者overflow-y:hidden即可实现这个效果。</p>
+</blockquote>
+<blockquote>
+<p>提示：</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>同理如果设置overflow-y:scroll或者overflow-x:hidden是只显示竖的滚动条，不显示横向的滚动条。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>如果设置横向滚动条的时候，一直不显示横向拉的那个条是因为你的内容还不足以让它显示出来，如果是文字的话，它自动换行了，所以就不显示，当设置white-space:nowrap;（不换行）的时候，内容超出就会出现</li>
+</ol>
+</blockquote>
+<blockquote>
+<h5 id="2-自定义滚动条样式"><a href="#2-自定义滚动条样式" class="headerlink" title="2.  自定义滚动条样式"></a>2.  自定义滚动条样式</h5></blockquote>
+<blockquote>
+<p>具体样式自己修改</p>
+</blockquote>
+<blockquote>
+<h6 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h6></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// IE浏览器支持通过CSS样式来改变滚动条的部件的自定义颜色</span><br><span class="line">滚动条颜色参数设置：</span><br><span class="line"><span class="selector-tag">scrollbar-3d-light-color</span> 设置或检索滚动条亮边框颜色</span><br><span class="line"><span class="selector-tag">scrollbar-highlight-color</span> 设置或检索滚动条3<span class="selector-tag">D</span>界面的亮边（<span class="selector-tag">ThreedHighlight</span>）颜色</span><br><span class="line"><span class="selector-tag">scrollbar-face-color</span> 设置或检索滚动条3<span class="selector-tag">D</span>表面（<span class="selector-tag">ThreedFace</span>）的颜色</span><br><span class="line"><span class="selector-tag">scrollbar-arrow-color</span> 设置或检索滚动条方向箭头的颜色</span><br><span class="line"><span class="selector-tag">scrollbar-shadow-color</span> 设置或检索滚动条3<span class="selector-tag">D</span>界面的暗边（<span class="selector-tag">ThreedShadow</span>）颜色</span><br><span class="line"><span class="selector-tag">scrollbar-dark-shadow-color</span> 设置或检索滚动条暗边框（<span class="selector-tag">ThreedDarkShadow</span>）颜色</span><br><span class="line"><span class="selector-tag">scrollbar-base-color</span> 设置或检索滚动条基准颜色</span><br><span class="line"></span><br><span class="line">// 这3个效果建议必须设置</span><br><span class="line"><span class="selector-tag">scrollbar-face-color</span>:<span class="selector-id">#F00</span>;  滚动条凸出部分的颜色(前景色),包括两端的方形按钮、水平或竖直滑动的滑块的颜色</span><br><span class="line"><span class="selector-tag">scrollbar-track-color</span>:<span class="selector-id">#FFF</span>; 滚动条的背景颜色,如果省略的话将出现虚点，颜色将采用<span class="selector-tag">face-color</span>的颜色</span><br><span class="line"><span class="selector-tag">scrollbar-arrow-color</span>:<span class="selector-id">#FFF</span>; 按钮(上下或者左右可以点击使滑块滚动的方形按钮)上三角箭头的颜色</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<blockquote>
+<p>滚动条的层叠关系为scrollbar在最底层，往上依次是track外层轨道，track-piece内层轨道。而button按钮、corner边角和thumb滑块有最顶层</p>
+</blockquote>
+<blockquote>
+<h6 id="只在webkit内核浏览器下才生效（谷歌）"><a href="#只在webkit内核浏览器下才生效（谷歌）" class="headerlink" title="只在webkit内核浏览器下才生效（谷歌）"></a>只在webkit内核浏览器下才生效（谷歌）</h6></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// webkit内核的浏览器支持滚动条自定义样式，但和IE不同，webkit是通过伪类来实现的</span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line"></span><br><span class="line"> 	 <span class="comment">/*滚动条整体样式*/</span></span><br><span class="line"> 	 </span><br><span class="line"> 	 <span class="attribute">width</span>: <span class="number">3px</span>;</span><br><span class="line">  	<span class="comment">/*高宽分别对应横竖滚动条的尺寸*/</span></span><br><span class="line"> 	 <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</span><br><span class="line"></span><br><span class="line"> 	 <span class="comment">/*滚动条里面小方块*/</span></span><br><span class="line"></span><br><span class="line">  	<span class="attribute">border-radius</span>: <span class="number">30px</span>;</span><br><span class="line">  	<span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2);</span><br><span class="line">  	<span class="attribute">background</span>: red; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span> &#123;</span><br><span class="line">  	</span><br><span class="line">	<span class="comment">/*滚动条里面轨道*/</span></span><br><span class="line"></span><br><span class="line"> 	 <span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.2);</span><br><span class="line"> 	 <span class="attribute">border-radius</span>: <span class="number">30px</span>;</span><br><span class="line"> 	 <span class="attribute">background</span>: <span class="number">#EDEDED</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#00aff0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track-piece</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*内层轨道*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-corner</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*边角*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-button</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 两端按钮 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//  前面加上需要添加样式的标签名/类名/id等，就可以了.</span><br><span class="line">例如</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line"> 	 <span class="attribute">width</span>: <span class="number">3px</span>;</span><br><span class="line"> 	 <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h6 id="火狐："><a href="#火狐：" class="headerlink" title="火狐："></a>火狐：</h6></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@-<span class="keyword">moz</span>-<span class="keyword">document</span> url-prefix(http://),url-prefix(https://) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 滚动条颜色 */</span></span><br><span class="line">    <span class="selector-tag">scrollbar</span> &#123;</span><br><span class="line">        <span class="attribute">-moz-appearance</span>: none <span class="meta">!important</span>;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">rgb</span>(0,255,0) <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 滚动条按钮颜色 */</span></span><br><span class="line">    <span class="selector-tag">thumb</span>,<span class="selector-tag">scrollbarbutton</span> &#123;</span><br><span class="line">        <span class="attribute">-moz-appearance</span>: none <span class="meta">!important</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(0,0,255) <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 鼠标悬停时按钮颜色 */</span></span><br><span class="line">    <span class="selector-tag">thumb</span><span class="selector-pseudo">:hover</span>,<span class="selector-tag">scrollbarbutton</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">-moz-appearance</span>: none <span class="meta">!important</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(255,0,0) <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 隐藏上下箭头 */</span></span><br><span class="line">    <span class="selector-tag">scrollbarbutton</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 纵向滚动条宽度 */</span></span><br><span class="line">    <span class="selector-tag">scrollbar</span><span class="selector-attr">[orient="vertical"]</span> &#123;</span><br><span class="line">        <span class="attribute">min-width</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h5 id="3-在原来的HTML的时候，我们可以这样html用定义整个页面的滚动条，但现在XHTML却无法用html定义页面滚动条"><a href="#3-在原来的HTML的时候，我们可以这样html用定义整个页面的滚动条，但现在XHTML却无法用html定义页面滚动条" class="headerlink" title="3. 在原来的HTML的时候，我们可以这样html用定义整个页面的滚动条，但现在XHTML却无法用html定义页面滚动条"></a>3. 在原来的HTML的时候，我们可以这样html用定义整个页面的滚动条，但现在XHTML却无法用html定义页面滚动条</h5></blockquote>
+<blockquote>
+<p>同样的代码，应用在XHTML下就不起作用了<br>在HTML里面定义的是body，因为html不是很标准所以这样可以生效，而在XHTML里面这样就不行了，<br>body标签本身不是根元素，只有html才是根元素，而页面的滚动条也是属于根元素的，所以这就是为什么定义body没有效果的原因，因为我们定义的只是一个子原素。知道了原理，如果把定义”body”或”xhtml”换成”<em>“，在html和xhtml都通过，因为</em>就是定义页面上的任何标签当然也包括了“html”这个标签</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">HTML</span> 页面下：</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    scrollbar-3dlight-color:#D4D0C8; /*- 最外左 -*/</span><br><span class="line">    <span class="selector-tag">scrollbar-highlight-color</span>:<span class="selector-id">#fff</span>; <span class="comment">/*- 左二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-face-color</span>:<span class="selector-id">#E4E4E4</span>; <span class="comment">/*- 面子 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-arrow-color</span>:<span class="selector-id">#666</span>; <span class="comment">/*- 箭头 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-shadow-color</span>:<span class="selector-id">#808080</span>; <span class="comment">/*- 右二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-darkshadow-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 右一 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-base-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 基色 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-track-color</span>:#;<span class="comment">/*- 滑道 -*/</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="selector-tag">XHTML</span> 页面下：</span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    scrollbar-3dlight-color:#D4D0C8; /*- 最外左 -*/</span><br><span class="line">    <span class="selector-tag">scrollbar-highlight-color</span>:<span class="selector-id">#fff</span>; <span class="comment">/*- 左二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-face-color</span>:<span class="selector-id">#E4E4E4</span>; <span class="comment">/*- 面子 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-arrow-color</span>:<span class="selector-id">#666</span>; <span class="comment">/*- 箭头 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-shadow-color</span>:<span class="selector-id">#808080</span>; <span class="comment">/*- 右二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-darkshadow-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 右一 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-base-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 基色 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-track-color</span>:#;<span class="comment">/*- 滑道 -*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*&#123; </span><br><span class="line">    scrollbar-3dlight-color:#D4D0C8; /*- 最外左 -*/</span><br><span class="line">    <span class="selector-tag">scrollbar-highlight-color</span>:<span class="selector-id">#fff</span>; <span class="comment">/*- 左二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-face-color</span>:<span class="selector-id">#E4E4E4</span>; <span class="comment">/*- 面子 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-arrow-color</span>:<span class="selector-id">#666</span>; <span class="comment">/*- 箭头 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-shadow-color</span>:<span class="selector-id">#808080</span>; <span class="comment">/*- 右二 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-darkshadow-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 右一 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-base-color</span>:<span class="selector-id">#D7DCE0</span>; <span class="comment">/*- 基色 -*/</span></span><br><span class="line">    <span class="selector-tag">scrollbar-track-color</span>:#;<span class="comment">/*- 滑道 -*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h5 id="4-隐藏滚动条"><a href="#4-隐藏滚动条" class="headerlink" title="4.  隐藏滚动条"></a>4.  隐藏滚动条</h5></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">如果只需要兼容移动浏览器（<span class="selector-tag">Chrome</span> 和 <span class="selector-tag">Safari</span>），可以使用自定义滚动条的伪对象选择器<span class="selector-pseudo">::-webkit-scrollbar</span>。</span><br><span class="line">既保证隐藏滚动条的同时还可以继续通过滚轮向下翻。当然仅限于在支持<span class="selector-tag">css3</span>的浏览器。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br><span class="line">或者</span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">如果是其他浏览器的话，可以麻烦点，先<span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>; 然后再用写个滚轮向上滚或者向下滚的事件来模拟。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>xhtml中隐藏滚动条</p>
+</blockquote>
+<blockquote>
+<p>在用ie6浏览有框架的xhtml页面的时候，默认会水平和垂直滚动条会一起出现，这是ie6的一个bug，在firefox上是正常的，出现的原因是其对XHTML 1.0 transitional doctype的解释缺陷.对于这个bug一般有3种解决方案，</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="selector-tag">html</span> &#123; <span class="attribute">overflow-y</span>: scroll; &#125;</span><br><span class="line"></span><br><span class="line">原理：强制显示<span class="selector-tag">ie</span>的垂直滚动条，而忽略水平滚动条</span><br><span class="line">优点：完全解决了这个问题, 允许你保持完整的<span class="selector-tag">XHTML</span> <span class="selector-tag">doctype</span>.</span><br><span class="line">缺点：即使页面不需要垂直滚动条的时候也会出现垂直滚动条。</span><br><span class="line"></span><br><span class="line">2. <span class="selector-tag">html</span> &#123; <span class="attribute">overflow-x</span>: hidden; <span class="attribute">overflow-y</span>: auto; &#125;</span><br><span class="line"></span><br><span class="line">原理：隐藏横向滚动，垂直滚动根据内容自适应</span><br><span class="line">优点：在视觉上解决了这个问题.在不必要的时候, 未强制垂直滚动条出现.</span><br><span class="line">缺点：只是隐藏了水平滚动条，如果页面真正需要水平滚动条的时候，</span><br><span class="line">屏幕以外的内容会因为用户无法水平滚动，而看不到。</span><br><span class="line"></span><br><span class="line">3<span class="selector-class">.body</span> &#123; <span class="attribute">margin-right</span>: -<span class="number">15px</span>; <span class="attribute">margin-bottom</span>: -<span class="number">15px</span>; &#125;</span><br><span class="line"></span><br><span class="line">原理：这会在<span class="selector-tag">margin</span>的水平和垂直方向上添加一个负值, <span class="selector-tag">IE</span>添加了该精确数值后, 便会去除对滚动条的需求假象.</span><br><span class="line">优点：在视觉上解决了这个问题.，垂直滚动根据内容自适应</span><br><span class="line">缺点：由于"人为创建"了15<span class="selector-tag">px</span>的外边距(<span class="selector-tag">margin</span>), 所以无法使用该填充过的屏幕区域.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h5 id="5-有关滚动条的伪类"><a href="#5-有关滚动条的伪类" class="headerlink" title="5.  有关滚动条的伪类"></a>5.  有关滚动条的伪类</h5></blockquote>
+<blockquote>
+<p>只适用于webkit内核浏览器下</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:horizontal</span></span><br><span class="line"> //horizontal伪类适用于任何水平方向上的滚动条</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:vertical</span></span><br><span class="line">    //vertical伪类适用于任何垂直方向的滚动条</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:decrement</span></span><br><span class="line">    //decrement伪类适用于按钮和轨道碎片。表示递减的按钮或轨道碎片，例如可以使区域向上或者向右移动的区域和按钮</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:increment</span></span><br><span class="line">    //increment伪类适用于按钮和轨道碎片。表示递增的按钮或轨道碎片，例如可以使区域向下或者向左移动的区域和按钮</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:start</span></span><br><span class="line">    //start伪类适用于按钮和轨道碎片。表示对象（按钮 轨道碎片）是否放在滑块的前面</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:end</span></span><br><span class="line">    //end伪类适用于按钮和轨道碎片。表示对象（按钮 轨道碎片）是否放在滑块的后面</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:double-button</span></span><br><span class="line">    //double-button伪类适用于按钮和轨道碎片。判断轨道结束的位置是否是一对按钮。也就是轨道碎片紧挨着一对在一起的按钮。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:single-button</span></span><br><span class="line">    //single-button伪类适用于按钮和轨道碎片。判断轨道结束的位置是否是一个按钮。也就是轨道碎片紧挨着一个单独的按钮。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:no-button</span></span><br><span class="line">    <span class="selector-tag">no-button</span>伪类表示轨道结束的位置没有按钮。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:corner-present</span></span><br><span class="line">    //corner-present伪类表示滚动条的角落是否存在。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:window-inactive</span></span><br><span class="line">    //适用于所有滚动条，表示包含滚动条的区域，焦点不在该窗口的时候。</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track-piece</span><span class="selector-pseudo">:start</span> &#123;</span><br><span class="line">    <span class="comment">/*滚动条上半边或左半边*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span><span class="selector-pseudo">:window-inactive</span> &#123;</span><br><span class="line">    <span class="comment">/*当焦点不在当前区域滑块的状态*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-button</span><span class="selector-pseudo">:horizontal</span><span class="selector-pseudo">:decrement</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="comment">/*当鼠标在水平滚动条下面的按钮上的状态*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/input-monitor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1745,126 +1974,6 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/Coffee/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/Coffee/" itemprop="url">Coffee</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T14:56:02+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>第一次搭建博客</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1915,7 +2024,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1926,7 +2035,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1937,7 +2046,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
