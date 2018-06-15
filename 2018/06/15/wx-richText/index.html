@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="富文本解析 可以使用wxParse这个插件:  首先先下载wxParse这个插件到微信小程序对应的文件夹中。 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’) 在.wxss文件中引入：@import “/wxParse/wxParse.wxss” 数据绑定：WxParse.wxParse(‘content’, ‘html’,">
+<meta name="description" content="富文本解析  可以使用wxParse这个插件:    首先先下载wxParse这个插件到微信小程序对应的文件夹中。     在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)     在.wxss文件中引入：@import “/wxParse/wxParse.wxss”     数据绑定：WxParse.wxParse(‘con">
 <meta name="keywords" content="小程序,rich-text">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wx-richText">
 <meta property="og:url" content="http://yoursite.com/2018/06/15/wx-richText/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="富文本解析 可以使用wxParse这个插件:  首先先下载wxParse这个插件到微信小程序对应的文件夹中。 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’) 在.wxss文件中引入：@import “/wxParse/wxParse.wxss” 数据绑定：WxParse.wxParse(‘content’, ‘html’,">
+<meta property="og:description" content="富文本解析  可以使用wxParse这个插件:    首先先下载wxParse这个插件到微信小程序对应的文件夹中。     在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)     在.wxss文件中引入：@import “/wxParse/wxParse.wxss”     数据绑定：WxParse.wxParse(‘con">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-15T03:12:34.751Z">
+<meta property="og:updated_time" content="2018-06-15T03:16:18.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wx-richText">
-<meta name="twitter:description" content="富文本解析 可以使用wxParse这个插件:  首先先下载wxParse这个插件到微信小程序对应的文件夹中。 在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’) 在.wxss文件中引入：@import “/wxParse/wxParse.wxss” 数据绑定：WxParse.wxParse(‘content’, ‘html’,">
+<meta name="twitter:description" content="富文本解析  可以使用wxParse这个插件:    首先先下载wxParse这个插件到微信小程序对应的文件夹中。     在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)     在.wxss文件中引入：@import “/wxParse/wxParse.wxss”     数据绑定：WxParse.wxParse(‘con">
 
 
 
@@ -345,19 +345,36 @@
       
         <blockquote>
 <h4 id="富文本解析"><a href="#富文本解析" class="headerlink" title="富文本解析"></a>富文本解析</h4></blockquote>
+<blockquote>
 <p>可以使用wxParse这个插件:</p>
+</blockquote>
+<blockquote>
 <ol>
-<li>首先先下载wxParse这个插件到微信小程序对应的文件夹中。</li>
+<li>首先先<a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener">下载wxParse</a>这个插件到微信小程序对应的文件夹中。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
 <li>在.js文件中引入：var WxParse = require(‘../../wxParse/wxParse.js’)</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
 <li>在.wxss文件中引入：@import “/wxParse/wxParse.wxss”</li>
-<li>数据绑定：WxParse.wxParse(‘content’, ‘html’, content, that)<br>这其中的“content”是后台传来的数据内容，具体情况具体对待。</li>
 </ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>数据绑定：WxParse.wxParse(‘content’, ‘html’, content, that)</li>
+</ol>
+</blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> article = <span class="string">"&lt;div&gt;我是HTML代码&lt;/div&gt;"</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// WxParse.wxParse(bindName,type,data,target,imagePadding)</span></span><br><span class="line"><span class="comment">// 1. bindName绑定的数据名（必填）</span></span><br><span class="line"><span class="comment">// 2. type可以为html或者md（必填）</span></span><br><span class="line"><span class="comment">// 3. data为传入的具体数据（必填）</span></span><br><span class="line"><span class="comment">// 4. target为Page对象，一般为this（必填）</span></span><br><span class="line"><span class="comment">// 5. imagePadding为当图片自适应是左右的单一padding（默认为0，可选）</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">WxParse.wxParse(<span class="string">"article"</span>,<span class="string">"html"</span>,article,that,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ol start="5">
-<li><p>在.wxml文件中引入： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">import</span>  src=<span class="string">"../../component/wxParse/ .wxml"</span>/&gt;</span><br><span class="line">&lt;template  is=<span class="string">"wxParse"</span> data=<span class="string">"&#123;&#123;wxParseData:content.nodes&#125;&#125;"</span>/&gt; </span><br><span class="line"><span class="comment">// 这其中的import表示引入文件，template表示导入模版。</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>在.wxml文件中引入：</li>
 </ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">import</span>  src=<span class="string">"../../component/wxParse/ .wxml"</span>/&gt;</span><br><span class="line">&lt;template  is=<span class="string">"wxParse"</span> data=<span class="string">"&#123;&#123;wxParseData:content.nodes&#125;&#125;"</span>/&gt; </span><br><span class="line"><span class="comment">// 这其中的import表示引入文件，template表示导入模版。</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <h4 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h4></blockquote>
 <blockquote>
