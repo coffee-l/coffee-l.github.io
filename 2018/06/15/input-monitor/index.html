@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="小程序,js," />
+  <meta name="keywords" content="js,input," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
-<meta name="keywords" content="小程序,js">
+<meta name="description" content="1、在元素上同时绑定 oninput 和onporpertychanger事件  123456&amp;lt;script type=&quot;text/JavaScript&quot;&amp;gt;	function myinputchange(e) &amp;#123;		alert(&quot;inputting!!&quot;);	&amp;#125;&amp;lt;/script&amp;gt;&amp;lt;input type=&quot;text&quot; id=&quot;myinput&quot; on">
+<meta name="keywords" content="js,input">
 <meta property="og:type" content="article">
-<meta property="og:title" content="点击选中对应的单选框，一键删除选中的单选框。">
-<meta property="og:url" content="http://yoursite.com/2018/06/13/wx-expurgate/index.html">
+<meta property="og:title" content="对input的内容进行监听的方法">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/input-monitor/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
+<meta property="og:description" content="1、在元素上同时绑定 oninput 和onporpertychanger事件  123456&amp;lt;script type=&quot;text/JavaScript&quot;&amp;gt;	function myinputchange(e) &amp;#123;		alert(&quot;inputting!!&quot;);	&amp;#125;&amp;lt;/script&amp;gt;&amp;lt;input type=&quot;text&quot; id=&quot;myinput&quot; on">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T03:43:14.745Z">
+<meta property="og:updated_time" content="2018-06-15T03:56:03.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="点击选中对应的单选框，一键删除选中的单选框。">
-<meta name="twitter:description" content="思路： 一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。 for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为arr 12345678910111213detele: function () &amp;#123;">
+<meta name="twitter:title" content="对input的内容进行监听的方法">
+<meta name="twitter:description" content="1、在元素上同时绑定 oninput 和onporpertychanger事件  123456&amp;lt;script type=&quot;text/JavaScript&quot;&amp;gt;	function myinputchange(e) &amp;#123;		alert(&quot;inputting!!&quot;);	&amp;#125;&amp;lt;/script&amp;gt;&amp;lt;input type=&quot;text&quot; id=&quot;myinput&quot; on">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/13/wx-expurgate/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/input-monitor/"/>
 
 
 
 
 
-  <title>点击选中对应的单选框，一键删除选中的单选框。 | Hexo</title>
+  <title>对input的内容进行监听的方法 | Hexo</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/wx-expurgate/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/input-monitor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Coffee">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">点击选中对应的单选框，一键删除选中的单选框。</h1>
+          <h1 class="post-title" itemprop="name headline">对input的内容进行监听的方法</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-13T09:18:27+08:00">
-                2018-06-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T11:42:16+08:00">
+                2018-06-15
               </time>
             
 
@@ -295,8 +295,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">小程序</span>
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
                   </a>
                 </span>
 
@@ -306,8 +306,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/JS/input/" itemprop="url" rel="index">
+                    <span itemprop="name">input</span>
                   </a>
                 </span>
 
@@ -343,10 +343,18 @@
       
 
       
-        <p>思路：</p>
-<p>一般采用splice（i，1）删除一个或者相连续的几个，在小程序中，目前我还没找到一键删除不连续的选项得方法，所以可以换个思路，不能删除选中的，那就添加没有选中的选项。创建新的空数组arr。</p>
-<p>for循环数据，如果没有被选中arr数组push当前下标的数据信息，之后this.setData将数据变为<strong>arr</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">detele: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = []</span><br><span class="line">    <span class="keyword">var</span> album = <span class="keyword">this</span>.data.album</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; album.length;i++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (album[i].selected == <span class="literal">false</span>)&#123;</span><br><span class="line">        arr.push(album[i])</span><br><span class="line">      &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">     album: arr,</span><br><span class="line">     edit: <span class="literal">false</span></span><br><span class="line">   &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>1、在元素上同时绑定 oninput 和onporpertychanger事件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/JavaScript"</span>&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">myinputchange</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"inputting!!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="text" id="myinput" oninput="myinputchange(event)" onporpertychange="myinputchange(event)" /</span>&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2、使用原生js添加监听事件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"> $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"\v"</span>==<span class="string">"v"</span>)&#123;</span><br><span class="line">		<span class="comment">//true为IE浏览器，感兴趣的可以去搜下，据说是现有最流行的判断浏览器的方法</span></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"myinput"</span>).attachEvent(<span class="string">"onporpertychange"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"inputting!!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"myinput"</span>).addEventListener(<span class="string">"onporpertychange"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="string">"inputting!!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="text" id="myinput"/</span>&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3、使用jQuery方法绑定事件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">     $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#myinput"</span>).bind(<span class="string">'input porpertychange'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"e"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="text" id="myinput"/</span>&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -364,9 +372,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/小程序/" rel="tag"># 小程序</a>
-          
             <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/input/" rel="tag"># input</a>
           
         </div>
       
@@ -379,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/wx-uploadpictures/" rel="next" title="小程序--上传多张图片">
-                <i class="fa fa-chevron-left"></i> 小程序--上传多张图片
+              <a href="/2018/06/15/wx-richText/" rel="next" title="wx-richText">
+                <i class="fa fa-chevron-left"></i> wx-richText
               </a>
             
           </div>
@@ -388,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/13/wx-uncheckedstate/" rel="prev" title="wx-uncheckedstate">
-                wx-uncheckedstate <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
