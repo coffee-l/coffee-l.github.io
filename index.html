@@ -239,6 +239,222 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/ellipsis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Coffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/23/ellipsis/" itemprop="url">文本超出--省略号代替</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T10:09:23+08:00">
+                2018-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/文本超出-省略号/" itemprop="url" rel="index">
+                    <span itemprop="name">文本超出--省略号</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="单行文本超出"><a href="#单行文本超出" class="headerlink" title="单行文本超出"></a>单行文本超出</h4><p>css3文字效果<br>text-overflow:ellipsis属性来实现单行文本的溢出显示省略号(…)。部分浏览器还需要加宽度width属性。</p>
+<p>text-overflow：规定当文本溢出包含元素时发生的事情。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clip</td>
+<td>修剪文本</td>
+</tr>
+<tr>
+<td>ellipsis</td>
+<td>显示省略号来代替被修剪的文字</td>
+</tr>
+<tr>
+<td>string</td>
+<td>使用给定字符串代替被修剪的文字</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>CSS</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="多行文本超出"><a href="#多行文本超出" class="headerlink" title="多行文本超出"></a>多行文本超出</h4><p> 在WebKit浏览器或移动端（绝大部分是WebKit内核的浏览器）的页面实现比较简单，可以直接使用WebKit的CSS扩展属性(WebKit是私有属性)-webkit-line-clamp；注意：这是一个不规范的属性（unsupported WebKit property），它没有出现在CSS规范草案中。</p>
+<p>-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。</p>
+<blockquote>
+<p>常见结合属性：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span> 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span> 可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CSS</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span> : <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line">display: -webkit-box; //必须属性，将元素作为弹性伸缩盒子模型显示。</span><br><span class="line">-webkit-line-clamp: 2; //用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。</span><br><span class="line">-webkit-box-orient: vertical; // 必须属性，规定弹性伸缩盒子子元素的排列方式。</span><br></pre></td></tr></table></figure>
+<p>这个属性比较合适WebKit浏览器或移动端（绝大部分是WebKit内核的）浏览器。</p>
+<h4 id="跨浏览器兼容的方案"><a href="#跨浏览器兼容的方案" class="headerlink" title="跨浏览器兼容的方案"></a>跨浏览器兼容的方案</h4><p>比较靠谱简单的做法就是设置相对定位的容器高度，用包含省略号(…)的元素模拟实现；</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">1.4em</span>;</span><br><span class="line">    <span class="comment">/* 3 times the line-height to show 3 lines */</span></span><br><span class="line">    <span class="attribute">height</span>:<span class="number">4.2em</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">"..."</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span> <span class="number">20px</span> <span class="number">1px</span> <span class="number">45px</span>;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="JavaScript实现"><a href="#JavaScript实现" class="headerlink" title="JavaScript实现"></a>JavaScript实现</h4><p>1.Clamp.js<br>下载及文档地址：<a href="https://github.com/josephschmitt/Clamp.js" target="_blank" rel="noopener">https://github.com/josephschmitt/Clamp.js</a></p>
+<blockquote>
+<p>Js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = <span class="built_in">document</span>.getElementById(<span class="string">"clamp-this-module"</span>);</span><br><span class="line">$clamp(<span class="built_in">module</span>, &#123;<span class="attr">clamp</span>: <span class="number">3</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h6 id="例"><a href="#例" class="headerlink" title="例"></a>例</h6><blockquote>
+<p>js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://github.com/josephschmitt/Clamp.js</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = <span class="built_in">document</span>.getElementById(<span class="string">"clampjs"</span>);</span><br><span class="line">$clamp(<span class="built_in">module</span>, &#123;<span class="attr">clamp</span>: <span class="number">3</span>&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://github.com/ftlabs/ftellipsis</span></span><br><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'ftellipsis'</span>);</span><br><span class="line"><span class="keyword">var</span> ellipsis = <span class="keyword">new</span> Ellipsis(element);</span><br><span class="line"></span><br><span class="line">ellipsis.calc();</span><br><span class="line">ellipsis.set();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://codepen.io/Merri/pen/Dsuim</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * TextOverflowClamp.js</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  * Updated 2013-05-09 to remove jQuery dependancy.</span></span><br><span class="line"><span class="comment">  * But be careful with webfonts!</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bind function support for older browsers without it</span></span><br><span class="line"><span class="comment">// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.bind) &#123;</span><br><span class="line">  <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">oThis</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">      <span class="comment">// closest thing possible to the ECMAScript 5 internal IsCallable function</span></span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> aArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>),</span><br><span class="line">        fToBind = <span class="keyword">this</span>,</span><br><span class="line">        fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> fToBind.apply(<span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP &amp;&amp; oThis</span><br><span class="line">                                 ? <span class="keyword">this</span></span><br><span class="line">                                 : oThis,</span><br><span class="line">                               aArgs.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)));</span><br><span class="line">        &#125;;</span><br><span class="line"> </span><br><span class="line">    fNOP.prototype = <span class="keyword">this</span>.prototype;</span><br><span class="line">    fBound.prototype = <span class="keyword">new</span> fNOP();</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> fBound;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the actual meat is here</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">w, d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clamp, measure, text, lineWidth,</span><br><span class="line">        lineStart, lineCount, wordStart,</span><br><span class="line">        line, lineText, wasNewLine,</span><br><span class="line">    ce = d.createElement.bind(d),</span><br><span class="line">    ctn = d.createTextNode.bind(d);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// measurement element is made a child of the clamped element to get it's style</span></span><br><span class="line">    measure = ce(<span class="string">'span'</span>);</span><br><span class="line">  </span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">        s.position = <span class="string">'absolute'</span>; <span class="comment">// prevent page reflow</span></span><br><span class="line">        s.whiteSpace = <span class="string">'pre'</span>; <span class="comment">// cross-browser width results</span></span><br><span class="line">        s.visibility = <span class="string">'hidden'</span>; <span class="comment">// prevent drawing</span></span><br><span class="line">    &#125;)(measure.style);</span><br><span class="line">    </span><br><span class="line">    clamp = <span class="function"><span class="keyword">function</span> (<span class="params">el, lineClamp</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// make sure the element belongs to the document</span></span><br><span class="line">    <span class="keyword">if</span>(!el.ownerDocument || !el.ownerDocument === d) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">// reset to safe starting values</span></span><br><span class="line">        lineStart = wordStart = <span class="number">0</span>;</span><br><span class="line">        lineCount = <span class="number">1</span>;</span><br><span class="line">        wasNewLine = <span class="literal">false</span>; </span><br><span class="line">        lineWidth = el.clientWidth;</span><br><span class="line">        <span class="comment">// get all the text, remove any line changes</span></span><br><span class="line">        text = (el.textContent || el.innerText).replace(<span class="regexp">/\n/g</span>, <span class="string">' '</span>);</span><br><span class="line">        <span class="comment">// remove all content</span></span><br><span class="line">        <span class="keyword">while</span>(el.firstChild !== <span class="literal">null</span>)</span><br><span class="line">            el.removeChild(el.firstChild);</span><br><span class="line">        <span class="comment">// add measurement element within so it inherits styles</span></span><br><span class="line">        el.appendChild(measure);</span><br><span class="line">        <span class="comment">// http://ejohn.org/blog/search-and-dont-replace/</span></span><br><span class="line">        text.replace(<span class="regexp">/ /g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">m, pos</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// ignore any further processing if we have total lines</span></span><br><span class="line">      <span class="keyword">if</span>(lineCount === lineClamp) <span class="keyword">return</span>;</span><br><span class="line">            <span class="comment">// create a text node and place it in the measurement element</span></span><br><span class="line">            measure.appendChild(ctn(text.substr(lineStart, pos - lineStart)));</span><br><span class="line">            <span class="comment">// have we exceeded allowed line width?</span></span><br><span class="line">            <span class="keyword">if</span>(lineWidth &lt; measure.clientWidth) &#123;</span><br><span class="line">                <span class="keyword">if</span>(wasNewLine) &#123;</span><br><span class="line">                    <span class="comment">// we have a long word so it gets a line of it's own</span></span><br><span class="line">                    lineText = text.substr(lineStart, pos + <span class="number">1</span> - lineStart);</span><br><span class="line">                    <span class="comment">// next line start position</span></span><br><span class="line">                    lineStart = pos + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// grab the text until this word</span></span><br><span class="line">                    lineText = text.substr(lineStart, wordStart - lineStart);</span><br><span class="line">                    <span class="comment">// next line start position</span></span><br><span class="line">                    lineStart = wordStart;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// create a line element</span></span><br><span class="line">                line = ce(<span class="string">'span'</span>);</span><br><span class="line">                <span class="comment">// add text to the line element</span></span><br><span class="line">                line.appendChild(ctn(lineText));</span><br><span class="line">                <span class="comment">// add the line element to the container</span></span><br><span class="line">                el.appendChild(line);</span><br><span class="line">                <span class="comment">// yes, we created a new line</span></span><br><span class="line">                wasNewLine = <span class="literal">true</span>;</span><br><span class="line">        lineCount++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// did not create a new line</span></span><br><span class="line">                wasNewLine = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// remember last word start position</span></span><br><span class="line">            wordStart = pos + <span class="number">1</span>;</span><br><span class="line">            <span class="comment">// clear measurement element</span></span><br><span class="line">            measure.removeChild(measure.firstChild);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// remove the measurement element from the container</span></span><br><span class="line">        el.removeChild(measure);</span><br><span class="line">        <span class="comment">// create the last line element</span></span><br><span class="line">        line = ce(<span class="string">'span'</span>);</span><br><span class="line">        <span class="comment">// give styles required for text-overflow to kick in</span></span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">            s.display = <span class="string">'inline-block'</span>;</span><br><span class="line">            s.overflow = <span class="string">'hidden'</span>;</span><br><span class="line">            s.textOverflow = <span class="string">'ellipsis'</span>;</span><br><span class="line">            s.whiteSpace = <span class="string">'nowrap'</span>;</span><br><span class="line">            s.width = <span class="string">'100%'</span>;</span><br><span class="line">        &#125;)(line.style);</span><br><span class="line">        <span class="comment">// add all remaining text to the line element</span></span><br><span class="line">        line.appendChild(ctn(text.substr(lineStart)));</span><br><span class="line">        <span class="comment">// add the line element to the container</span></span><br><span class="line">        el.appendChild(line);</span><br><span class="line">    &#125;</span><br><span class="line">    w.clamp = clamp;</span><br><span class="line">&#125;)(<span class="built_in">window</span>, <span class="built_in">document</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// the only bit of jQuery</span></span><br><span class="line">$(<span class="built_in">window</span>).bind(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  clamp(<span class="built_in">document</span>.getElementById(<span class="string">'textoverflowclamp'</span>), <span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>html</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Line Clampin'<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Weird WebKit Flexbox Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module line-clamp"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Fade Out Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module fade"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Opera Overflow Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module last-line"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Clamp.js Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module js"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"clampjs"</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>ftellipsis Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module js ftellipsis"</span> <span class="attr">id</span>=<span class="string">"ftellipsis"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>TextOverflowClamp.js Way<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"module js textoverflowclamp"</span> <span class="attr">id</span>=<span class="string">"textoverflowclamp"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>css</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> url(https://fonts.googleapis.com/css?family=Open+Sans);</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">1.2em</span>/<span class="number">1.2em</span> <span class="string">'Open Sans'</span>, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.module</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">250px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1em</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.module</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.line-clamp</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3.6em</span>; <span class="comment">/* exactly three lines */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: right;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">70%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1.2em</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, rgba(255, 255, 255, 0), <span class="built_in">rgba</span>(255, 255, 255, 1) <span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.last-line</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3.6em</span>; <span class="comment">/* exactly three lines */</span></span><br><span class="line">  <span class="attribute">text-overflow</span>: -o-ellipsis-lastline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ftellipsis</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3.6em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1em</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.jQuery插件-jQuery.dotdotdot</p>
+<blockquote>
+<p>js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">"#wrapper"</span>).dotdotdot(&#123;</span><br><span class="line">		<span class="comment">//	configuration goes here</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>下载及详细文档地址：<a href="https://github.com/BeSite/jQuery.dotdotdot或http://dotdotdot.frebsite.nl/" target="_blank" rel="noopener">https://github.com/BeSite/jQuery.dotdotdot或http://dotdotdot.frebsite.nl/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/border/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1832,173 +2048,6 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/wx-lazyload/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Coffee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/wx-lazyload/" itemprop="url">小程序--图片懒加载</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-12T09:36:31+08:00">
-                2018-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">小程序</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/图片懒加载/" itemprop="url" rel="index">
-                    <span itemprop="name">图片懒加载</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>图片懒加载 </p>
-</blockquote>
-<ul>
-<li>需要知道wxml的节点信息（【<a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html" target="_blank" rel="noopener">wxml节点信息以及节点布局相交状态</a>】）</li>
-<li>利用三元表达式改变图片图路径</li>
-<li>当滚动到当前位置图片进行加载（判断当前图片到达的高度）</li>
-</ul>
-<blockquote>
-<p>wxml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;photolist&quot;&gt;</span><br><span class="line">  &lt;view class=&apos;list&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;item item-&#123;&#123;index&#125;&#125;&apos; wx:for=&quot;&#123;&#123;group&#125;&#125;&quot; wx:for-item=&quot;item&quot; wx:key=&quot;index&quot; data-key=&apos;&#123;&#123;index&#125;&#125;&apos; bindtap=&apos;showicon&apos; data-photo=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;</span><br><span class="line">    //三元表达式</span><br><span class="line">      &lt;image src=&apos;&#123;&#123;item.show? item.src : item.def&#125;&#125;&apos; class=&apos;&#123;&#123;item.show? &quot;active&quot; : &quot;&quot;&#125;&#125;&apos; data-index=&apos;&#123;&#123;index&#125;&#125;&apos; mode=&quot;widthFix&quot; bindtap=&apos;previewImage&apos;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>js</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    height: &apos;&apos;, // 获取当前页面的可视高度</span><br><span class="line">    group:</span><br><span class="line">    [</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">    ],</span><br><span class="line">    imgs: [],</span><br><span class="line">  &#125;,</span><br><span class="line">   onLoad: function () &#123;</span><br><span class="line">    let group = this.data.group  // 获取原数据</span><br><span class="line">    for (let i in this.data.group) &#123; </span><br><span class="line">    //循环 每张图片进入可视区域时 show的false状态改为true 渲染真正的图片地址</span><br><span class="line">    //wx.createIntersectionObserver()创建并返回一个 IntersectionObserver 对象实例 </span><br><span class="line">      wx.createIntersectionObserver().relativeToViewport(&#123; bottom: 20 &#125;).observe(&apos;.item-&apos; + i, (ret) =&gt; &#123; //目标节点进入显示区域以下20px 时</span><br><span class="line">        if (ret.intersectionRatio &gt; 0) &#123;</span><br><span class="line">          group[i].show = true</span><br><span class="line">        &#125;</span><br><span class="line">        this.setData(&#123; // 更新数据</span><br><span class="line">          group</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">   onPageScroll() &#123;  </span><br><span class="line">    this.showImg()// 调用showImg函数</span><br><span class="line">  &#125;,</span><br><span class="line">  showImg() &#123;  // 判断高度是否需要加载</span><br><span class="line">  //返回一个SelectorQuery对象实例。可以在这个实例上使用select等方法选择节点，并使用boundingClientRect等方法选择需要查询的信息。</span><br><span class="line">    wx.createSelectorQuery().selectAll(&apos;.item&apos;).boundingClientRect((ret) =&gt; &#123;</span><br><span class="line">      const group = this.data.group</span><br><span class="line">      const height = this.data.height</span><br><span class="line">     </span><br><span class="line">      ret.forEach((item, index) =&gt; &#123;</span><br><span class="line">        console.log(group[index])</span><br><span class="line">        if (item.top &lt; height) &#123;</span><br><span class="line">          group[index].show = true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        group</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;).exec()</span><br><span class="line">  &#125;,</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2049,7 +2098,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2060,7 +2109,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2071,7 +2120,7 @@ tip: 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

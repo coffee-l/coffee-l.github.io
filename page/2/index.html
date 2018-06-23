@@ -239,6 +239,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/wx-lazyload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Coffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/12/wx-lazyload/" itemprop="url">小程序--图片懒加载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-12T09:36:31+08:00">
+                2018-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/图片懒加载/" itemprop="url" rel="index">
+                    <span itemprop="name">图片懒加载</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>图片懒加载 </p>
+</blockquote>
+<ul>
+<li>需要知道wxml的节点信息（【<a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html" target="_blank" rel="noopener">wxml节点信息以及节点布局相交状态</a>】）</li>
+<li>利用三元表达式改变图片图路径</li>
+<li>当滚动到当前位置图片进行加载（判断当前图片到达的高度）</li>
+</ul>
+<blockquote>
+<p>wxml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;photolist&quot;&gt;</span><br><span class="line">  &lt;view class=&apos;list&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;item item-&#123;&#123;index&#125;&#125;&apos; wx:for=&quot;&#123;&#123;group&#125;&#125;&quot; wx:for-item=&quot;item&quot; wx:key=&quot;index&quot; data-key=&apos;&#123;&#123;index&#125;&#125;&apos; bindtap=&apos;showicon&apos; data-photo=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;</span><br><span class="line">    //三元表达式</span><br><span class="line">      &lt;image src=&apos;&#123;&#123;item.show? item.src : item.def&#125;&#125;&apos; class=&apos;&#123;&#123;item.show? &quot;active&quot; : &quot;&quot;&#125;&#125;&apos; data-index=&apos;&#123;&#123;index&#125;&#125;&apos; mode=&quot;widthFix&quot; bindtap=&apos;previewImage&apos;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    height: &apos;&apos;, // 获取当前页面的可视高度</span><br><span class="line">    group:</span><br><span class="line">    [</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">      &#123; src: &quot;http://img.taopic.com/uploads/allimg/120509/154493-12050910330720.jpg&quot;, show: false &#125;,</span><br><span class="line">    ],</span><br><span class="line">    imgs: [],</span><br><span class="line">  &#125;,</span><br><span class="line">   onLoad: function () &#123;</span><br><span class="line">    let group = this.data.group  // 获取原数据</span><br><span class="line">    for (let i in this.data.group) &#123; </span><br><span class="line">    //循环 每张图片进入可视区域时 show的false状态改为true 渲染真正的图片地址</span><br><span class="line">    //wx.createIntersectionObserver()创建并返回一个 IntersectionObserver 对象实例 </span><br><span class="line">      wx.createIntersectionObserver().relativeToViewport(&#123; bottom: 20 &#125;).observe(&apos;.item-&apos; + i, (ret) =&gt; &#123; //目标节点进入显示区域以下20px 时</span><br><span class="line">        if (ret.intersectionRatio &gt; 0) &#123;</span><br><span class="line">          group[i].show = true</span><br><span class="line">        &#125;</span><br><span class="line">        this.setData(&#123; // 更新数据</span><br><span class="line">          group</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">   onPageScroll() &#123;  </span><br><span class="line">    this.showImg()// 调用showImg函数</span><br><span class="line">  &#125;,</span><br><span class="line">  showImg() &#123;  // 判断高度是否需要加载</span><br><span class="line">  //返回一个SelectorQuery对象实例。可以在这个实例上使用select等方法选择节点，并使用boundingClientRect等方法选择需要查询的信息。</span><br><span class="line">    wx.createSelectorQuery().selectAll(&apos;.item&apos;).boundingClientRect((ret) =&gt; &#123;</span><br><span class="line">      const group = this.data.group</span><br><span class="line">      const height = this.data.height</span><br><span class="line">     </span><br><span class="line">      ret.forEach((item, index) =&gt; &#123;</span><br><span class="line">        console.log(group[index])</span><br><span class="line">        if (item.top &lt; height) &#123;</span><br><span class="line">          group[index].show = true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        group</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;).exec()</span><br><span class="line">  &#125;,</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/wx-pluggable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -683,7 +850,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -694,7 +861,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -705,7 +872,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
